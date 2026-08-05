@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D &amp; A Engineering Consulting | Structural Design &amp; Engineering, Metro Manila</title>
+  <meta name="description" content="Structural analysis, design, and signed and sealed construction documents for residential, commercial, and mid-rise projects across Metro Manila. Free consultation.">
+  <meta name="author" content="D &amp; A Engineering Consulting">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A0F1A">
+
+  <!-- Social sharing. URLs must stay absolute or link previews break.
+       Update all five if the site ever moves to a custom domain. -->
+  <link rel="canonical" href="https://michmcandelaria1-debug.github.io/dna-structural/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="D &amp; A Engineering Consulting">
+  <meta property="og:locale" content="en_PH">
+  <meta property="og:url" content="https://michmcandelaria1-debug.github.io/dna-structural/">
+  <meta property="og:title" content="D &amp; A Engineering Consulting — Structural Design, Metro Manila">
+  <meta property="og:description" content="Structural analysis, design, and signed and sealed construction documents. Signed by a PRC-registered civil engineer. Free consultation.">
+  <meta property="og:image" content="https://michmcandelaria1-debug.github.io/dna-structural/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Structural analysis model of a reinforced concrete building frame">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="D &amp; A Engineering Consulting — Structural Design, Metro Manila">
+  <meta name="twitter:description" content="Structural analysis, design, and signed and sealed construction documents. Free consultation.">
+  <meta name="twitter:image" content="https://michmcandelaria1-debug.github.io/dna-structural/assets/og-card.jpg">
+
+  <!-- Favicon: inline SVG, no extra file to host -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0F1A'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='bold' fill='%23C9963B' text-anchor='middle'%3ED%26A%3C/text%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "D & A Engineering Consulting",
+    "description": "Structural engineering consultancy providing structural analysis and design, construction documents, inspection and condition assessment, peer review, and value engineering.",
+    "url": "https://michmcandelaria1-debug.github.io/dna-structural/",
+    "telephone": "+63-927-069-2571",
+    "email": "dna.struct@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Manila",
+      "addressCountry": "PH"
+    },
+    "areaServed": { "@type": "Country", "name": "Philippines" },
+    "priceRange": "Fixed-fee proposal after free consultation",
+    "knowsAbout": [
+      "Structural analysis and design",
+      "Reinforced concrete design",
+      "Structural steel design",
+      "Seismic design to NSCP",
+      "Steel connection design",
+      "Value engineering"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Structural engineering services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Structural Analysis & Design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plans & Construction Documents" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inspection & Condition Assessment" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peer Review" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Value Engineering" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0A0F1A',
+            secondary: '#0D1F3C',
+            accent: '#C9963B',
+            brand: {
+              text: '#12161F',
+              bg: '#F4F5F7',
+            },
+            dark: '#0a0a0a',
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .nav.scrolled { background: #0A0F1A !important; box-shadow: 0 4px 16px rgba(0,0,0,0.35); }
+    .dotgrid {
+      background-image: radial-gradient(circle, rgba(13,31,60,0.13) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .proj-tab { color: rgba(255,255,255,0.45); border-color: transparent; }
+    .proj-tab:hover { color: rgba(255,255,255,0.8); }
+    .proj-tab.is-active { color: #fff; border-color: #C9963B; }
+    .proj-card.is-hidden { display: none; }
+
+    .rule-gold { background: linear-gradient(90deg, #C9963B, rgba(201,150,59,0)); }
+    /* Hero scroll-scrub: wrapper provides the scroll distance, section sticks */
+    #hero-wrapper { height: 300vh; }
+    /* screen blend makes the frames' pure-black background fully transparent,
+       so the structure sits directly on the section colour with no visible edge */
+    #hero-canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 854; mix-blend-mode: screen; }
+    /* ── Mobile & tablet ────────────────────────────────────── */
+    @media (max-width: 1023px) {
+      /* Mobile: no pinning. The hero flows at natural height so nothing can be clipped.
+         Scroll-scrub is a desktop interaction — on a phone it forces all the copy into
+         one viewport and pushes the CTAs off screen. */
+      #hero-wrapper { height: auto; }
+      #hero { position: relative; min-height: auto; overflow: visible; }
+      #hero-canvas { max-height: 46svh; width: auto; max-width: 100%; margin-inline: auto; }
+      #hero-copy h1 { margin-bottom: 0.85rem; }
+      #hero-copy > p:first-child { margin-bottom: 0.9rem; font-size: 0.68rem; }
+      #hero-copy p.text-lg { font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.25rem; }
+      #hero-copy .trust-bar { gap: 0.45rem; margin-bottom: 1.35rem; }
+      #hero-copy .trust-bar span:last-child { font-size: 0.8rem; }
+      #scroll-cue { display: none; }
+    }
+    @media (max-width: 767px) {
+      /* tabs scroll sideways instead of wrapping to three ragged lines */
+      /* tabs: all three should fit; if they don't, the fade shows there's more */
+      #proj-tabs-wrap { position: relative; }
+      #proj-tabs-wrap::after {
+        content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 2rem;
+        pointer-events: none; background: linear-gradient(to right, rgba(13,31,60,0), #0D1F3C);
+      }
+      #proj-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      #proj-tabs::-webkit-scrollbar { display: none; }
+      .proj-tab { white-space: nowrap; padding-left: 0.6rem; padding-right: 0.6rem; font-size: 0.82rem; }
+      /* comfortable tap targets */
+      #hero-copy a, #contact a[href^="tel"], #contact a[href^="mailto"] { min-height: 44px; }
+      /* stop any long token from forcing a horizontal scrollbar */
+      h1, h2, h3 { overflow-wrap: break-word; }
+    }
+    /* Reduced motion wins over everything above: no pin, no scrub */
+    @media (prefers-reduced-motion: reduce) {
+      #hero-wrapper { height: auto !important; }
+      #hero { position: relative !important; min-height: auto !important; }
+      #scroll-cue { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="font-body bg-white text-brand-text antialiased">
+
+  <nav class="nav fixed top-0 w-full z-50 transition-all duration-300" id="nav">
+    <div class="max-w-screen-xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="#" class="font-heading font-bold text-lg text-white tracking-tight">D &amp; A <span class="text-accent">|</span> <span class="font-body font-medium text-xs tracking-[0.2em] text-white/60 uppercase">Engineering Consulting</span></a>
+      <ul class="hidden md:flex items-center gap-8 font-body text-sm font-medium text-white/80">
+        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+        <li><a href="#renders" class="hover:text-white transition-colors">Our Work</a></li>
+        <li><a href="#process" class="hover:text-white transition-colors">Process</a></li>
+        <li><a href="#contact" class="inline-block border-2 border-accent text-accent px-5 py-2 font-medium tracking-wide text-xs hover:bg-accent hover:text-primary transition-colors">Free Consultation</a></li>
+      </ul>
+      <button class="nav__toggle md:hidden text-white text-2xl" aria-label="Menu">&#9776;</button>
+    </div>
+    <div class="nav__menu hidden flex-col bg-primary px-6 pb-6 gap-4 font-body text-sm text-white/85">
+      <a href="#services" class="py-3 border-b border-white/10">Services</a>
+      <a href="#renders" class="py-3 border-b border-white/10">Our Work</a>
+      <a href="#process" class="py-3 border-b border-white/10">Process</a>
+      <a href="#contact" class="mt-3 inline-block border-2 border-accent text-accent px-5 py-3 font-medium tracking-wide text-xs text-center">Free Consultation</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <div id="hero-wrapper" class="relative bg-primary">
+    <section id="hero" class="sticky top-0 bg-primary min-h-screen flex items-center pt-20 pb-10 md:pt-16 md:pb-0 overflow-hidden">
+      <div class="max-w-screen-xl mx-auto px-6 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center">
+
+          <div class="lg:col-span-7 order-2 lg:order-1 reveal" id="hero-copy">
+            <p class="font-body text-xs md:text-sm uppercase tracking-[0.25em] text-accent mb-6">Structural Design &amp; Engineering Consulting · Metro Manila</p>
+            <h1 class="font-heading font-bold text-white tracking-tight leading-[1.05] mb-6" style="font-size: clamp(1.95rem, 6vw, 4.2rem);">Every Structure Proven Before a Single Bar Is Bought</h1>
+            <p class="font-body text-lg text-white/60 leading-relaxed max-w-xl mb-8">
+              Structural analysis, design, and signed and sealed construction documents — for single residences through commercial and mid-rise developments. Your structure is verified in analysis long before anyone pours concrete.
+            </p>
+
+            <div class="trust-bar flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-10">
+              <div class="flex items-center gap-2.5">
+                <span class="text-accent text-lg leading-none">&#10003;</span>
+                <span class="font-body text-sm text-white/75">PRC-Registered Civil Engineer</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-accent text-lg leading-none">&#10003;</span>
+                <span class="font-body text-sm text-white/75">NSCP-Compliant Design</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-accent text-lg leading-none">&#10003;</span>
+                <span class="font-body text-sm text-white/75">Free Consultation</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="#contact" class="inline-block border-2 border-white text-white px-8 py-3.5 font-body font-medium tracking-wide text-sm hover:bg-white hover:text-primary transition-colors">Book Free Consultation</a>
+              <a href="#renders" class="inline-block font-body font-medium tracking-wide text-sm text-accent hover:text-white transition-colors py-3.5">See Project Renders &rarr;</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 order-1 lg:order-2">
+            <canvas id="hero-canvas" class="w-full h-auto"></canvas>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="scroll-cue" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none transition-opacity duration-300">
+        <span class="font-body text-[0.65rem] uppercase tracking-[0.25em] text-white/40">Scroll to raise the structure</span>
+        <span class="block w-px h-8 bg-accent/60"></span>
+      </div>
+    </section>
+    </div>
+
+    <!-- ═══════════ SERVICES ═══════════ -->
+    <section id="services" class="bg-brand-bg dotgrid py-20 md:py-28">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="max-w-3xl mb-14 reveal">
+          <p class="font-body text-xs uppercase tracking-[0.25em] text-accent mb-4">Services</p>
+          <h2 class="font-heading font-bold text-4xl md:text-5xl text-brand-text tracking-tight mb-5">Engineering That Scales With the Project</h2>
+          <p class="font-body text-lg text-gray-500 leading-relaxed">
+            The same rigour applies whether it is a two-storey house or a mid-rise development — only the scope changes. Every engagement ends in drawings that pass plan-check.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="bg-white border border-gray-200 p-8 reveal hover:border-accent transition-colors">
+            <svg class="w-9 h-9 text-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <rect x="3" y="3" width="18" height="18"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
+            </svg>
+            <h3 class="font-heading font-bold text-xl text-brand-text mb-3">Structural Analysis &amp; Design</h3>
+            <p class="font-body text-sm text-gray-600 leading-relaxed mb-5">
+              Full modelling and analysis against dead, live, wind, and seismic load combinations. Members sized, foundations designed, and the whole structure checked against NSCP before anything is drawn.
+            </p>
+            <p class="font-body text-xs uppercase tracking-widest text-gray-400">Single residence &rarr; Mid-rise</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 p-8 reveal hover:border-accent transition-colors">
+            <svg class="w-9 h-9 text-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><circle cx="12.5" cy="15" r="3"/><path d="M11 18 L11 21 L12.5 20 L14 21 L14 18"/>
+            </svg>
+            <h3 class="font-heading font-bold text-xl text-brand-text mb-3">Plans &amp; Construction Documents</h3>
+            <p class="font-body text-sm text-gray-600 leading-relaxed mb-5">
+              Structural plans, details, schedules, and general notes — signed and sealed by a PRC-registered civil engineer and ready for building permit submission.
+            </p>
+            <p class="font-body text-xs uppercase tracking-widest text-gray-400">Permit-ready deliverables</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 p-8 reveal hover:border-accent transition-colors">
+            <svg class="w-9 h-9 text-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <line x1="2" y1="6" x2="22" y2="6"/><line x1="5" y1="6" x2="5" y2="9"/><line x1="12" y1="6" x2="12" y2="9"/><line x1="19" y1="6" x2="19" y2="9"/><circle cx="13" cy="15" r="5"/><line x1="16.5" y1="18.5" x2="21" y2="23"/>
+            </svg>
+            <h3 class="font-heading font-bold text-xl text-brand-text mb-3">Inspection &amp; Condition Assessment</h3>
+            <p class="font-body text-sm text-gray-600 leading-relaxed mb-5">
+              Cracking, deflection, settlement, or corrosion investigated and reported against code capacity — with a clear verdict on whether the structure is safe as built.
+            </p>
+            <p class="font-body text-xs uppercase tracking-widest text-gray-400">Existing &amp; in-construction</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 p-8 reveal hover:border-accent transition-colors">
+            <svg class="w-9 h-9 text-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <line x1="12" y1="3" x2="12" y2="21"/><line x1="4" y1="7" x2="20" y2="7"/><line x1="8" y1="21" x2="16" y2="21"/><path d="M4 7 L1.5 13 h5 z"/><path d="M20 7 L17.5 13 h5 z"/>
+            </svg>
+            <h3 class="font-heading font-bold text-xl text-brand-text mb-3">Peer Review</h3>
+            <p class="font-body text-sm text-gray-600 leading-relaxed mb-5">
+              An independent structural check on another engineer's design, for owners, lenders, or developers who want a second set of eyes before construction starts. Findings reported plainly, against code.
+            </p>
+            <p class="font-body text-xs uppercase tracking-widest text-gray-400">Third-party design review</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 p-8 reveal hover:border-accent transition-colors">
+            <svg class="w-9 h-9 text-accent mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square">
+              <rect x="3" y="3" width="18" height="6"/><rect x="7" y="15" width="10" height="5"/><line x1="12" y1="10" x2="12" y2="13"/><path d="M9.5 11.5 L12 14 L14.5 11.5"/>
+            </svg>
+            <h3 class="font-heading font-bold text-xl text-brand-text mb-3">Value Engineering</h3>
+            <p class="font-body text-sm text-gray-600 leading-relaxed mb-5">
+              Member sizing and foundations revisited so steel and concrete go only where the structure actually demands them. On many projects the material saved offsets a meaningful part of the engineering fee.
+            </p>
+            <p class="font-body text-xs uppercase tracking-widest text-gray-400">Often pays for itself in material</p>
+          </div>
+
+          <div class="bg-primary p-8 reveal flex flex-col justify-center">
+            <h3 class="font-heading font-bold text-xl text-white mb-3">Not sure which you need?</h3>
+            <p class="font-body text-sm text-white/60 leading-relaxed mb-6">
+              Send your architectural plans and we will tell you what the structure requires. The initial review costs nothing.
+            </p>
+            <a href="#contact" class="inline-block border-2 border-accent text-accent px-6 py-3 font-body font-medium tracking-wide text-sm text-center hover:bg-accent hover:text-primary transition-colors">Book Free Consultation</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ PROJECT RENDERS ═══════════ -->
+    <section id="renders" class="bg-secondary py-20 md:py-28">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="max-w-3xl mb-14 reveal">
+          <p class="font-body text-xs uppercase tracking-[0.25em] text-accent mb-4">Our Work</p>
+          <h2 class="font-heading font-bold text-4xl md:text-5xl text-white tracking-tight mb-5">What the Analysis Actually Looks Like</h2>
+          <p class="font-body text-lg text-white/55 leading-relaxed">
+            Not photographs of finished buildings — anyone can post those. These are the actual analysis models, across high-rise residential, mixed-use, industrial, and utility structures.
+          </p>
+        </div>
+
+        <div id="proj-tabs-wrap" class="mb-10 reveal">
+        <div class="flex flex-wrap items-center gap-1 border-b border-white/10" id="proj-tabs">
+          <button type="button" class="proj-tab is-active font-body text-sm tracking-wide px-5 py-3 border-b-2 transition-colors" data-tab="buildings">Buildings <span class="text-white/25">11</span></button>
+          <button type="button" class="proj-tab font-body text-sm tracking-wide px-5 py-3 border-b-2 transition-colors" data-tab="electrical"><span class="md:hidden">Electrical</span><span class="hidden md:inline">Electrical Infrastructures</span> <span class="text-white/25">4</span></button>
+          <button type="button" class="proj-tab font-body text-sm tracking-wide px-5 py-3 border-b-2 transition-colors" data-tab="nonbuilding"><span class="md:hidden">Non-Building</span><span class="hidden md:inline">Non-Buildings</span> <span class="text-white/25">3</span></button>
+        </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 mb-12" id="proj-grid">
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-flight-service-station.jpg" alt="Structural analysis model — Flight Service Station" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Airport Facility</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Candon City, Ilocos Sur</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Flight Service Station</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">An air traffic control facility designed with complete structural analysis, member design, and drawing coordination. Full ETABS analysis covered member forces, deflection checks, stress evaluation, and optimised member sizing for structural efficiency and code compliance.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-food-commissary.jpg" alt="Structural analysis model — Food Commissary & Warehouse Building" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Commissary &amp; Warehouse</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Muntinlupa City</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Food Commissary &amp; Warehouse Building</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A large-scale food commissary with a long-span steel truss roof spanning 24&nbsp;m. Scope included pedestal column sizing, isolated footing design, drift and torsion irregularity checks, SMRF connection detailing, and full steel beam and deck coordination.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-control-building-5s.jpg" alt="Structural analysis model — 5-Storey Control Building" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Energy Infrastructure</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">5-Storey Control Building</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A five-storey mixed-use facility with full structural analysis, member design, and drawing coordination. Structural requirements were integrated within an architecturally driven layout, with all deliverables prepared to construction standard.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-control-building-solar.jpg" alt="Structural analysis model — Solar Farm Control Building" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Energy Infrastructure</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Zambales</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Solar Farm Control Building</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">Structural support design for a large-scale solar farm. Steel framing for PV array mounting was designed under wind-critical load combinations, with foundation coordination and constructability review completed for field installation across the site.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-two-storey-clinic.jpg" alt="Structural analysis model — Two-Storey Clinic" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Healthcare</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Magallanes</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Two-Storey Clinic</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A two-storey healthcare facility with structural design tailored to medical occupancy. Full analysis under seismic and wind loads, with member sizing and foundation design completed to meet code requirements for essential facilities.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-hospital-20f.jpg" alt="Structural analysis model — Hospital — 20 Floors + Roof Deck" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Healthcare · High-Rise</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Hospital — 20 Floors + Roof Deck</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A 20-storey hospital tower with roof deck, requiring rigorous irregularity management across drift, torsion, and diaphragm discontinuity. Scope included shear wall and column design, isolated foundation sizing, and complete beam design across all floors.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-industrial-warehouse.jpg" alt="Structural analysis model — Industrial Warehouse" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Industrial</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Industrial Warehouse</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A heavy-duty industrial warehouse with a 30&nbsp;m clear-span steel truss roof, driven pile foundations, and pressure slab design. SMRF connections were verified in detail, with steel beam and deck systems designed throughout and full irregularity compliance achieved.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-twin-towers.jpg" alt="Structural analysis model — Podium with Twin Towers (21F & 26F)" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Mixed-Use Tower Complex</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Podium with Twin Towers (21F &amp; 26F)</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A podium-with-tower development of two residential towers, 21 and 26 floors. Foundation design addressed high hydrostatic water pressure at basement level. Full shear wall, column, beam, and flat slab design with comprehensive irregularity compliance.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">SAFE</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-passenger-terminal.jpg" alt="Structural analysis model — Passenger Terminal Building" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Airport Facility</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Passenger Terminal Building</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A public transport terminal with complex curved roof geometry, designed under wind and seismic load combinations. Full ETABS analysis covered member force, deflection, and stress evaluation, with optimised member sizing and AutoCAD construction drawings delivered.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">ETABS</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-warehouse-building.jpg" alt="Structural analysis model — Warehouse Building" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Warehouse</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Warehouse Building</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A single-storey warehouse fully analysed under wind and seismic conditions. Steel connections were verified in IDEA StatiCa and fabrication-ready drawings produced in AutoCAD, with member sizes optimised for structural efficiency and material economy.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="buildings">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-residential-building.jpg" alt="Structural analysis model — Residential Building" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Residential</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Residential Building</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A multi-storey residential structure fully analysed under seismic and wind load combinations. Member forces, deflections, and stresses were evaluated against code limits, with optimised member sizing and complete AutoCAD construction drawings produced.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="electrical">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-transmission-tower.jpg" alt="Structural analysis model — Transmission Tower" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Power Transmission</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Transmission Tower</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A lattice steel transmission tower analysed under combined wind and conductor loading. Connections were designed and verified bolt-by-bolt in IDEA StatiCa, with a complete 3D model and fabrication drawing package delivered via Tekla Structures — including assembly drawings and material take-offs.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">Tekla</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="electrical">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-communication-tower.jpg" alt="Structural analysis model — Communication Tower" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Telecom Infrastructure</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Communication Tower</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A slender steel communication tower designed under extreme wind loading. STAAD.Pro analysis evaluated member forces across multiple load combinations, with IDEA StatiCa used for all connection checks and full Tekla detailing issued for fabrication.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">Tekla</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="electrical">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-hv-gantry.jpg" alt="Structural analysis model — HV Equipment Supports & Gantry Tower" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Substation</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">HV Equipment Supports &amp; Gantry Tower</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">High-voltage equipment supports and an H-frame gantry structure within a substation yard, designed for reliability under wind and conductor forces. IDEA StatiCa verified all bolt and weld connections, with a Tekla 3D model produced for fabrication coordination.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">Tekla</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="electrical">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-caisson-foundation.jpg" alt="Structural analysis model — Steel Pole Caisson Foundation" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Transmission Line Foundation</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Steel Pole Caisson Foundation</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">Caisson foundation design for transmission line steel poles, analysed under wind, seismic, and conductor load combinations. Base plate connections were verified using IDEA StatiCa, with all design outputs coordinated for constructability in the field.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="nonbuilding">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-water-treatment-tank.jpg" alt="Structural analysis model — Water Treatment Tank" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Water Infrastructure</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Water Treatment Tank</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A reinforced concrete water treatment tank designed under hydrodynamic loading. Member forces and stresses were evaluated across all applicable load combinations, with AutoCAD construction drawings prepared and reviewed for constructability with the project team.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="nonbuilding">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-elevated-water-tank.jpg" alt="Structural analysis model — Elevated Water Tank" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Water Infrastructure</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Elevated Water Tank</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A steel-framed elevated water tank designed under wind and seismic forces. All connections were verified in IDEA StatiCa with full bolt and weld checks, and a Tekla 3D model was produced for fabrication. Member sizes were optimised for structural efficiency throughout.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">IDEA StatiCa</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">Tekla</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+          <article class="proj-card reveal flex flex-col" data-cat="nonbuilding">
+            <div class="bg-white flex items-center justify-center h-56 p-3">
+              <img src="assets/proj-fire-pumphouse.jpg" alt="Structural analysis model — Fire Pumphouse" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="bg-primary flex items-center justify-between gap-3 px-4 py-2.5">
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-accent">Water Infrastructure</span>
+              <span class="font-body text-[0.68rem] uppercase tracking-widest text-white/45 text-right">Philippines</span>
+            </div>
+            <div class="pt-5 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-white mb-3 leading-snug">Fire Pumphouse</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed mb-5 flex-1">A fire pump house structure designed under wind and hydrodynamic loading. Member forces and stresses were assessed through the relevant load combinations, with compliance to design codes, constructability, and coordination with the engineering and detailing teams.</p>
+              <div class="flex flex-wrap gap-1.5"><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">STAAD.Pro</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-white/45 border border-white/15 px-2 py-1">AutoCAD</span><span class="font-body text-[0.65rem] uppercase tracking-widest text-accent/80 border border-accent/30 px-2 py-1">Confidential</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="border-t border-white/10 pt-10 mb-12 reveal">
+          <p class="font-body text-xs uppercase tracking-[0.25em] text-accent mb-6">Modelled &amp; Analysed In</p>
+          <div class="flex flex-wrap items-center gap-4 md:gap-5">
+            <div class="flex flex-col items-center gap-2 w-24">
+              <div class="bg-white w-20 h-20 flex items-center justify-center p-2.5">
+                <img src="assets/software-01.jpg" alt="ETABS logo" class="max-h-full max-w-full object-contain">
+              </div>
+              <span class="font-body text-[0.65rem] text-white/55 text-center leading-tight">ETABS</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24">
+              <div class="bg-white w-20 h-20 flex items-center justify-center p-2.5">
+                <img src="assets/software-02.jpg" alt="SAFE logo" class="max-h-full max-w-full object-contain">
+              </div>
+              <span class="font-body text-[0.65rem] text-white/55 text-center leading-tight">SAFE</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24">
+              <div class="bg-white w-20 h-20 flex items-center justify-center p-2.5">
+                <img src="assets/software-04.jpg" alt="AutoCAD logo" class="max-h-full max-w-full object-contain">
+              </div>
+              <span class="font-body text-[0.65rem] text-white/55 text-center leading-tight">AutoCAD</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24">
+              <div class="bg-white w-20 h-20 flex items-center justify-center p-2.5">
+                <img src="assets/software-05.jpg" alt="STAAD.Pro logo" class="max-h-full max-w-full object-contain">
+              </div>
+              <span class="font-body text-[0.65rem] text-white/55 text-center leading-tight">STAAD.Pro</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24">
+              <div class="bg-white w-20 h-20 flex items-center justify-center p-2.5">
+                <img src="assets/software-06.jpg" alt="IDEA StatiCa logo" class="max-h-full max-w-full object-contain">
+              </div>
+              <span class="font-body text-[0.65rem] text-white/55 text-center leading-tight">IDEA StatiCa</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-24">
+              <div class="bg-white w-20 h-20 flex items-center justify-center p-2.5">
+                <img src="assets/software-07.jpg" alt="Tekla Structures logo" class="max-h-full max-w-full object-contain">
+              </div>
+              <span class="font-body text-[0.65rem] text-white/55 text-center leading-tight">Tekla Structures</span>
+            </div>
+          </div>
+          <p class="font-body text-sm text-white/40 mt-6 max-w-3xl leading-relaxed">
+            Industry-standard analysis, design, and detailing tools — so models, calculations, and drawings hand over cleanly to your architect, contractor, or plan-checker.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-accent pl-6 py-1 reveal">
+          <p class="font-body text-sm text-white/50 leading-relaxed max-w-3xl">
+            <span class="text-white/80 font-medium">Client identities withheld.</span> The work shown was personally engineered by our principal under prior professional engagements. Projects marked <span class="text-accent/80">Confidential</span> are shown without location or identifying detail. Clients and developers are never named — the engineering is.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ PROCESS ═══════════ -->
+    <section id="process" class="bg-brand-bg dotgrid py-20 md:py-28">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="max-w-3xl mb-16 reveal">
+          <p class="font-body text-xs uppercase tracking-[0.25em] text-accent mb-4">Process</p>
+          <h2 class="font-heading font-bold text-4xl md:text-5xl text-brand-text tracking-tight mb-5">How an Engagement Runs</h2>
+          <p class="font-body text-lg text-gray-500 leading-relaxed">
+            Five steps from your first message to a sealed set of drawings — and beyond, through permit and construction.
+          </p>
+        </div>
+
+        <div class="max-w-4xl">
+
+          <div class="flex gap-6 md:gap-10 pb-12 border-l border-gray-300 pl-8 md:pl-12 -ml-px relative reveal">
+            <div class="absolute -left-[1.15rem] top-0 bg-brand-bg py-1">
+              <span class="font-heading font-bold text-3xl text-accent">01</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-heading font-bold text-2xl text-brand-text mb-3">Free Consultation &amp; Scope</h3>
+              <p class="font-body text-base text-gray-600 leading-relaxed">
+                Share your architectural plans and site details. The initial review costs nothing. You receive a fixed-fee proposal with clearly defined deliverables — no open-ended billing, no surprises later.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 md:gap-10 pb-12 border-l border-gray-300 pl-8 md:pl-12 -ml-px relative reveal">
+            <div class="absolute -left-[1.15rem] top-0 bg-brand-bg py-1">
+              <span class="font-heading font-bold text-3xl text-accent">02</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-heading font-bold text-2xl text-brand-text mb-3">Structural Analysis &amp; Modelling</h3>
+              <p class="font-body text-base text-gray-600 leading-relaxed">
+                Your structure is modelled and analysed against every governing load case — dead, live, wind, and seismic per NSCP. This is the step that determines whether the building stands, and it happens before a single drawing is issued.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 md:gap-10 pb-12 border-l border-gray-300 pl-8 md:pl-12 -ml-px relative reveal">
+            <div class="absolute -left-[1.15rem] top-0 bg-brand-bg py-1">
+              <span class="font-heading font-bold text-3xl text-accent">03</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-heading font-bold text-2xl text-brand-text mb-3">Design Development &amp; Value Engineering</h3>
+              <p class="font-body text-base text-gray-600 leading-relaxed mb-4">
+                Members are sized, foundations designed, and everything coordinated with your architect and MEP consultants.
+              </p>
+              <div class="bg-white border-l-2 border-accent p-5">
+                <p class="font-body text-base text-gray-700 leading-relaxed">
+                  Fees are scoped against the value of the project, not quoted blind. An optimised structure puts steel and concrete only where they earn their place — and on most projects that saving offsets a meaningful part of the engineering fee. Under-designed structures get paid for later; over-designed ones get paid for in material nobody ever sees.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-6 md:gap-10 pb-12 border-l border-gray-300 pl-8 md:pl-12 -ml-px relative reveal">
+            <div class="absolute -left-[1.15rem] top-0 bg-brand-bg py-1">
+              <span class="font-heading font-bold text-3xl text-accent">04</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-heading font-bold text-2xl text-brand-text mb-3">Signed &amp; Sealed Documents</h3>
+              <p class="font-body text-base text-gray-600 leading-relaxed">
+                Structural plans, details, schedules, and general notes — signed and sealed by a PRC-registered civil engineer, ready for building permit submission.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 md:gap-10 pl-8 md:pl-12 relative reveal">
+            <div class="absolute -left-[1.15rem] top-0 bg-brand-bg py-1">
+              <span class="font-heading font-bold text-3xl text-accent">05</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-heading font-bold text-2xl text-brand-text mb-3">Permit &amp; Construction Support</h3>
+              <p class="font-body text-base text-gray-600 leading-relaxed">
+                Plan-check comments answered, contractor RFIs resolved, and site visits as the structure goes up. The engagement does not end when the drawings are issued.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section id="contact" class="bg-primary py-20 md:py-28">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+          <div class="reveal">
+            <p class="font-body text-xs uppercase tracking-[0.25em] text-accent mb-4">Get Started</p>
+            <h2 class="font-heading font-bold text-4xl md:text-5xl text-white tracking-tight mb-6 leading-tight">Send Us Your Plans. The First Review Is Free.</h2>
+            <p class="font-body text-lg text-white/55 leading-relaxed mb-10">
+              Tell us what you are building and we will tell you what the structure requires — before any fee is discussed.
+            </p>
+
+            <div class="space-y-5 mb-10">
+              <a href="tel:+639270692571" class="flex items-center gap-4 group">
+                <span class="text-accent text-xl">&#9990;</span>
+                <span class="font-heading font-bold text-2xl md:text-3xl text-white group-hover:text-accent transition-colors">+63 (927) 069-2571</span>
+              </a>
+              <a href="mailto:dna.struct@gmail.com" class="flex items-center gap-4 group">
+                <span class="text-accent text-xl">&#9993;</span>
+                <span class="font-body text-lg text-white/80 group-hover:text-accent transition-colors">dna.struct@gmail.com</span>
+              </a>
+              <div class="flex items-center gap-4">
+                <span class="text-accent text-xl">&#9678;</span>
+                <span class="font-body text-lg text-white/60">Manila, Philippines</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-6 border-t border-white/10">
+              <div class="flex items-center gap-2.5">
+                <span class="text-accent leading-none">&#10003;</span>
+                <span class="font-body text-sm text-white/60">PRC-registered</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-accent leading-none">&#10003;</span>
+                <span class="font-body text-sm text-white/60">NSCP-compliant</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-accent leading-none">&#10003;</span>
+                <span class="font-body text-sm text-white/60">All project sizes accepted</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 md:p-10 reveal">
+            <h3 class="font-heading font-bold text-2xl text-brand-text mb-6">Request a Free Consultation</h3>
+            <!-- Composes a pre-filled email in the visitor's own mail app. No server, no
+                 third-party endpoint, nothing to verify. Swap for a real form endpoint
+                 later if submissions should land somewhere automatically. -->
+            <form id="contact-form" action="mailto:dna.struct@gmail.com" method="POST" enctype="text/plain">
+              <div class="mb-5">
+                <label for="name" class="block font-body text-xs uppercase tracking-widest text-gray-400 mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required class="w-full border border-gray-300 px-4 py-3 font-body text-sm focus:border-accent outline-none transition-colors">
+              </div>
+              <div class="mb-5">
+                <label for="email" class="block font-body text-xs uppercase tracking-widest text-gray-400 mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com" class="w-full border border-gray-300 px-4 py-3 font-body text-sm focus:border-accent outline-none transition-colors">
+              </div>
+              <div class="mb-5">
+                <label for="project" class="block font-body text-xs uppercase tracking-widest text-gray-400 mb-2">Project Type</label>
+                <select id="project" name="project" class="w-full border border-gray-300 px-4 py-3 font-body text-sm focus:border-accent outline-none transition-colors bg-white">
+                  <option>Single residence</option>
+                  <option>Multi-unit residential</option>
+                  <option>Commercial</option>
+                  <option>Mid-rise development</option>
+                  <option>Inspection or peer review</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block font-body text-xs uppercase tracking-widest text-gray-400 mb-2">Tell us about the project</label>
+                <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 px-4 py-3 font-body text-sm focus:border-accent outline-none transition-colors resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-accent text-primary px-8 py-4 font-body font-bold tracking-wide text-sm hover:bg-primary hover:text-accent border-2 border-accent transition-colors">Send Enquiry</button>
+              <p class="font-body text-xs text-gray-400 mt-4 text-center">Opens your email app with the details filled in &mdash; just press send. Or write to us directly at <a href="mailto:dna.struct@gmail.com" class="underline hover:text-accent">dna.struct@gmail.com</a>.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="bg-dark text-white py-10">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <p class="font-heading font-bold text-lg text-white mb-1">D &amp; A Engineering Consulting</p>
+          <p class="font-body text-sm text-white/40">Structural design &amp; engineering consulting · Manila, Philippines</p>
+        </div>
+        <div class="font-body text-sm text-white/40 md:text-right">
+          <p><a href="tel:+639270692571" class="hover:text-accent transition-colors">+63 (927) 069-2571</a></p>
+          <p><a href="mailto:dna.struct@gmail.com" class="hover:text-accent transition-colors">dna.struct@gmail.com</a></p>
+        </div>
+      </div>
+      <p class="font-body text-xs text-white/25 mt-8 pt-6 border-t border-white/10">&copy; 2026 D &amp; A Engineering Consulting. Structural plans signed and sealed by a PRC-registered civil engineer.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    document.querySelector('.nav__toggle').addEventListener('click', () => {
+      const menu = document.querySelector('.nav__menu');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    });
+
+    document.querySelectorAll('.nav__menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.querySelector('.nav__menu');
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Portfolio category tabs ────────────────────────────────
+    (function () {
+      const tabs = document.querySelectorAll('.proj-tab');
+      const cards = document.querySelectorAll('.proj-card');
+      if (!tabs.length) return;
+      function show(cat) {
+        cards.forEach(c => c.classList.toggle('is-hidden', c.dataset.cat !== cat));
+        tabs.forEach(t => t.classList.toggle('is-active', t.dataset.tab === cat));
+      }
+      tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.tab)));
+      show('buildings');
+    })();
+
+    // ── Contact form → pre-composed email ──────────────────────
+    // Builds a readable mailto: from the field values so the message arrives
+    // formatted, rather than as raw form encoding.
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      const TO = 'dna.struct@gmail.com';
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const val = id => (document.getElementById(id) || {}).value || '';
+        const name = val('name').trim();
+        const email = val('email').trim();
+        const project = val('project').trim();
+        const message = val('message').trim();
+
+        if (!name || !email) {
+          alert('Please enter your name and email address.');
+          return;
+        }
+
+        const subject = 'Consultation request' + (name ? ' — ' + name : '');
+        const body =
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n' +
+          'Project type: ' + (project || 'Not specified') + '\n\n' +
+          'Project details:\n' + (message || '(none provided)') + '\n\n' +
+          '— Sent from the D & A Engineering Consulting website';
+
+        window.location.href = 'mailto:' + TO +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+      });
+    })();
+
+    // ── Hero frame sequence ────────────────────────────────────
+    // Desktop : hero is pinned; frames scrub across the pinned scroll distance.
+    // Mobile  : hero flows at natural height (nothing can clip); the sequence
+    //           scrubs against the canvas's own travel up the viewport, using
+    //           every 2nd frame to halve the download.
+    (function () {
+      const TOTAL = 80;
+      const FRAME_W = 640, FRAME_H = 854;
+      const canvas = document.getElementById('hero-canvas');
+      const wrapper = document.getElementById('hero-wrapper');
+      const cue = document.getElementById('scroll-cue');
+      if (!canvas || !wrapper) return;
+
+      const ctx = canvas.getContext('2d');
+      const mqDesktop = window.matchMedia('(min-width: 1024px)');
+      const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      const imgs = {};                 // frame number -> Image
+      let seq = [];                    // frame numbers used at this breakpoint
+      let current = -1, pending = false, mode = '';
+
+      const src = n => 'assets/frames/frame_' + String(n).padStart(4, '0') + '.jpg';
+
+      function get(n, onload) {
+        let im = imgs[n];
+        if (!im) {
+          im = new Image();
+          im.onload = function () { if (onload) onload(); };
+          im.src = src(n);
+          imgs[n] = im;
+        } else if (im.complete && onload) onload();
+        return im;
+      }
+
+      function sizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const cssW = canvas.clientWidth || FRAME_W;
+        canvas.width = Math.round(cssW * dpr);
+        canvas.height = Math.round(cssW * (FRAME_H / FRAME_W) * dpr);
+        paint(current < 0 ? 0 : current, true);
+      }
+
+      function paint(idx, force) {
+        const n = seq[idx];
+        const im = n && imgs[n];
+        if (!im || !im.complete || !im.naturalWidth) return;
+        if (idx === current && !force) return;
+        current = idx;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(im, 0, 0, canvas.width, canvas.height);
+      }
+
+      function render(idx) {
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(function () { paint(idx); pending = false; });
+      }
+
+      function progress() {
+        if (mode === 'pinned') {
+          const rect = wrapper.getBoundingClientRect();
+          const dist = wrapper.offsetHeight - window.innerHeight;
+          if (dist <= 0) return 0;
+          return -rect.top / dist;
+        }
+        // flow mode: 0 when the canvas sits in place, 1 once it has scrolled fully out
+        const r = canvas.getBoundingClientRect();
+        if (r.height <= 0) return 0;
+        return (0 - r.top) / r.height;
+      }
+
+      function onScroll() {
+        if (!seq.length || mode === 'static') return;
+        let p = progress();
+        p = p < 0 ? 0 : p > 1 ? 1 : p;
+        render(Math.min(seq.length - 1, Math.round(p * (seq.length - 1))));
+        if (cue) cue.style.opacity = String(Math.max(0, 1 - p * 6));
+      }
+
+      function build(newMode) {
+        if (newMode === mode) return;
+        mode = newMode;
+        current = -1;
+
+        if (mode === 'static') {
+          seq = [TOTAL];                                  // finished structure only
+        } else if (mode === 'pinned') {
+          seq = Array.from({ length: TOTAL }, (_, k) => k + 1);
+        } else {
+          seq = [];                                       // flow: every 2nd frame
+          for (let n = 1; n <= TOTAL; n += 2) seq.push(n);
+          if (seq[seq.length - 1] !== TOTAL) seq.push(TOTAL);
+        }
+
+        get(seq[0], function () { paint(0, true); });     // first paint immediately
+        const rest = function () { seq.forEach(n => get(n)); onScroll(); };
+        if ('requestIdleCallback' in window) requestIdleCallback(rest);
+        else window.addEventListener('load', rest);
+        onScroll();
+      }
+
+      function decide() {
+        if (mqReduced.matches) build('static');
+        else if (mqDesktop.matches) build('pinned');
+        else build('flow');
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', function () { sizeCanvas(); onScroll(); });
+      if (mqDesktop.addEventListener) mqDesktop.addEventListener('change', decide);
+      if (mqReduced.addEventListener) mqReduced.addEventListener('change', decide);
+      sizeCanvas();
+      decide();
+    })();
+
+  </script>
+
+</body>
+</html>
